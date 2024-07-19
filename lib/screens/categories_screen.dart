@@ -4,8 +4,8 @@ import 'package:meals_app/models/category.dart';
 import 'package:meals_app/screens/meals_screen.dart';
 import 'package:meals_app/widgets/category_grid_item.dart';
 
-class CategorieScreen extends StatelessWidget {
-  const CategorieScreen({super.key});
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
 
   void _selectCategory(BuildContext context, Category category) {
     final mealList = dummyMeals
