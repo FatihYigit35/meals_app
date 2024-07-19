@@ -27,7 +27,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kategoriyi seçin'),
+        title: const Text('Choose the category'),
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),

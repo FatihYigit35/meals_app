@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class MeailItem extends StatelessWidget {
-  const MeailItem({
+class MealItem extends StatelessWidget {
+  const MealItem({
     super.key,
     required this.meal,
   });
