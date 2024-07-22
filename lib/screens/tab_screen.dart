@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/data/dummy_data.dart';
 import 'package:meals_app/models/filter.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 import 'package:meals_app/screens/filters_screen.dart';
@@ -6,6 +7,13 @@ import 'package:meals_app/screens/meals_screen.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
 
 import '../models/meal.dart';
+
+const kInitialFilters = {
+  Filter.gluttenFree: false,
+  Filter.lactoseFree: false,
+  Filter.vegetarian: false,
+  Filter.vegan: false,
+};
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -19,6 +27,7 @@ class _TabScreenState extends State<TabScreen> {
   final _textCategories = 'Categories';
   final _textFavorites = 'Favorites';
   int _selectedPageIndex = 0;
+  Map<Filter, bool> _selectedFilters = kInitialFilters;
 
   void _showInfoMessage(String message) {
     ScaffoldMessenger.of(context).clearSnackBars();
@@ -56,16 +65,43 @@ class _TabScreenState extends State<TabScreen> {
     if (selectedDrawer == 'filters') {
       final result = await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
-          builder: (context) => const FiltersScreen(),
+          builder: (context) => FiltersScreen(
+            currentFilters: _selectedFilters,
+          ),
         ),
       );
+
+      setState(() {
+        _selectedFilters = result ?? kInitialFilters;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final availableMeals = dummyMeals.where((meal) {
+      if (_selectedFilters[Filter.gluttenFree]! && !meal.isGlutenFree) {
+        return false;
+      }
+
+      if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+        return false;
+      }
+
+      if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+        return false;
+      }
+
+      if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
+        return false;
+      }
+
+      return true;
+    }).toList();
+
     Widget activeScreen = CategoriesScreen(
       onChangeFavorite: _changeMealFavoriteStatus,
+      availableMeals: availableMeals,
     );
 
     String activePageTitle = _textCategories;

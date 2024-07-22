@@ -68,7 +68,7 @@ class MealItem extends StatelessWidget {
               right: 0,
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 25),
                 color: Colors.black54,
                 child: Column(
                   children: [
@@ -105,7 +105,7 @@ class MealItem extends StatelessWidget {
                           width: 12,
                         ),
                         MealItemTrait(
-                          icon: Icons.attach_money,
+                          icon: Icons.currency_exchange_outlined,
                           label: affordabilityText,
                         ),
                       ],
