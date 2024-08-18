@@ -7,10 +7,32 @@ What I learned with this project;
 
 ## App Screens
 
-<img src="/assets/images/1-main.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/2-drawer.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/3-filters.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/4-meal_list.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/5-meal_details.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/6-meal_added_favorite.jpg" alt="Screenshot of Main Page" width="40%"/> 
-<img src="/assets/images/7-favorite_list.jpg" alt="Screenshot of Main Page" width="40%"/> 
+<table>
+  <tr>
+    <td>
+      <img src="/assets/images/1-main.jpg"/>
+    </td>
+    <td>
+      <img src="/assets/images/2-drawer.jpg"/>
+    </td>
+    <td>
+      <img src="/assets/images/3-filters.jpg"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/assets/images/4-meal_list.jpg"/>
+    </td>
+    <td>
+      <img src="/assets/images/5-meal_detail.jpg"/>
+    </td>
+    <td>
+      <img src="/assets/images/6-meal_added_favorite.jpg"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/assets/images/7-favorite_list.jpg"/>
+    </td>
+  </tr>
+</table>
